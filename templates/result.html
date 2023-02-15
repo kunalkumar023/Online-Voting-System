@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title> 
+    <style>
+        body{
+            background-color: #efbcb8;
+        }
+        #main{
+            margin-left: 380px;
+            margin-top: 50px;
+            background-color: white;
+            width: 530px;
+            border-radius: 30px;
+            padding-left: 170px;
+            padding-top: 20px;
+            padding-bottom: 10px;
+        }
+    </style> 
+</head>
+<body>
+    <h2 style="margin-top: 100px;margin-left: 670px;font-size: 35px;">Result</h2>
+    <div id="main">
+        <h2>Q.{{question.question}}</h2>
+        {% for option in options   %}
+        <pre style="background-color: #f44336;border-radius: 5px;width: 250px;margin-left: 45px;"><h3 id="opt" style="margin-left: 50px;height: 25px;font-size: 17px;">{{option.option}}</h3>                      <h3 style="margin-top: -50px;margin-left: 200px;margin-bottom: 2px;font-size: 17px;">{{option.vote}}</h3></pre>
+        {% endfor %}
+    </div>
+</body>
+</html>

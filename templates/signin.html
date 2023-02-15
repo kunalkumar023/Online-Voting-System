@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+      
+        body{
+           
+             /* background-image:url("https://digitalsynopsis.com/wp-content/uploads/2017/07/beautiful-color-ui-gradients-backgrounds-celestial.png"); */
+            background-color: #efbcb8;
+        }
+        
+        #sign {
+            margin-top: 150px;
+            margin-left: 650px;
+        }
+
+        div {
+            background-color: rgb(234, 146, 146);
+            width: fit-content;
+            margin-left: 470px;
+            margin-top: 0px;
+            width: 450px;
+            border-radius: 13px;
+            height: 200px;
+        }
+
+        form {
+
+            margin: 5px;
+        }
+
+        form input {
+            margin: 5px;
+        }
+
+        #submit {
+            margin-left: 100px;
+        }
+
+        #username {
+            margin-top: 50px;
+            ;
+
+        }
+
+        #password1{
+            margin-left: 10px;
+        }
+        #passlab{
+            margin-left: 65px;
+        }
+        form label, input {
+            margin-left: 30px;
+            border-radius: 5px;
+        }
+        
+
+        .submit {
+            text-decoration: none;
+            color: black;
+            margin-top: 25px;
+            margin-left: 170px;
+            display: inline-block;
+            text-decoration: none;
+            color: #000000;
+            border: 1px solid #000000;
+            padding: 12px 34px;
+            font-size: 13px;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+        }
+        .submit:hover {
+            border: 1px solid #f44336;
+        background: #f44336;
+        transition: 1s;
+        }
+    </style>
+</head>
+
+<body>
+   
+    
+
+    
+    <h2 id="sign">Sign In</h2>
+    <div>
+        
+        <form action="/signin" method="post">
+            {% csrf_token %}
+            <label for="username">Addmission No:</label>
+            <input type="text" name="username" id="username" placeholder="Addmission.." required><br>
+
+            <label for="pass1" id="passlab">Password:</label>
+            <input type="password" name="pass1" id="password1" placeholder="Password.." required><br>
+
+            <button type="submit" class="submit">Sign In</button>
+            <ul class="messages">
+                {% for message in messages %}
+                <li style="color: red;">{{ message }}</li>
+                {% endfor %}
+                </ul>
+        </form>
+    </div>
+</body>
+
+</html>

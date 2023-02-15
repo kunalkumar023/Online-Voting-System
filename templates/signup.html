@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    <style>
+        #sign {
+            text-align: left;
+            color: white;
+            margin-top: 230px;
+            margin-left: 250px;
+
+        }
+
+        #form{
+            text-align: left;
+        }
+        body{
+            background-image: url("https://ggapartners.com/wp-content/uploads/post/taking-club-elections-digital-with-online-voting/16909/2021/03/OnlineVotingInfoSheet_web_featured-img.svg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        div{
+        
+            border: solid 3px white;
+            width: fit-content;
+            height: 350px;
+            padding-top: 100px;
+            margin-left: 100px;
+            margin-top: -82px;
+            padding-right: 10px;
+            border-radius: 15px;
+            margin-bottom: 150px;
+        
+        }
+
+        form label{
+            color: white;
+            margin-left: 7px;
+        }
+
+        form input{
+            margin: 5px;
+        }
+
+        #submit{
+            margin: 5px;
+            margin-left: 125px;
+            padding: 5px;
+        }
+
+        input{
+            border-radius: 20px;
+            border: none;
+            width: 100px;
+            transition: all 0.4s ease-in-out;
+        }
+        input:focus {
+            width: 150px;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <h2 id="sign">Sign Up</h2>
+
+    <div id="form"> 
+    <form action="/signup" method="post">
+
+        {% csrf_token %}
+        <label for="username">Addmission No:</label>
+        <input type="text" name="username" id="username" placeholder="Addmission" required><br>
+
+        <label for="fname">First Name:</label>
+        <input type="text" name="fname" id="fname" placeholder="First name.." required><br>
+
+        <label for="lname">Last Name:</label>
+        <input type="text" name="lname" id="lname" placeholder="Last name.." required><br>
+
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" placeholder="Email.." required><br>
+
+        <label for="pass1">Password:</label>
+        <input type="password" name="pass1" id="password1" placeholder="Password.." required><br>
+
+        <label for="pass2">Confirm Your Password:</label>
+        <input type="password" name="pass2" id="password2" placeholder="Again password.." required><br>
+
+        <button type="submit" id="submit">Submit
+        </button>
+      
+<ul class="messages">
+    {% for message in messages %}
+    <li style="color: white;">{{ message }}</li>
+    {% endfor %}
+</ul>
+
+    </form>     
+    </div>  
+    <P>Please fill all the details carefully!</P> 
+</body>
+
+</html>
